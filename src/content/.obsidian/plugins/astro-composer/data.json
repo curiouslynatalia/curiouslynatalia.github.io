@@ -73,6 +73,7 @@
   "showMdxFilesInExplorer": false,
   "processBackgroundFileChanges": true,
   "syncDraftDate": true,
+  "enableScheduledPublishing": true,
   "draftProperty": "draft",
   "draftLogic": "true-is-draft",
   "publishDateField": "date",
