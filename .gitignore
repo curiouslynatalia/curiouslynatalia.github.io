@@ -7,6 +7,14 @@ cli/node_modules/
 dist/
 .astro/
 
+# Synced/generated public files (regenerated at build time)
+public/posts/
+public/pages/
+public/docs/
+public/projects/
+public/special/
+public/graph/
+
 # Environment variables
 .env
 .env.local
