@@ -7,9 +7,9 @@
   "defaultProvider": "unsplash",
   "unsplashProxyServer": "",
   "pexelsApiKey": "",
-  "pexelsApiKeySecretId": "pexels-api-key",
+  "pexelsApiKeySecretId": null,
   "pixabayApiKey": "",
-  "pixabayApiKeySecretId": "pixabay-api-key",
+  "pixabayApiKeySecretId": null,
   "defaultOrientation": "any",
   "defaultImageSize": "large",
   "enablePropertyPaste": true,
@@ -35,13 +35,16 @@
   "banner": {
     "properties": {
       "imageProperty": "image",
-      "iconProperty": "icon"
+      "iconProperty": "icon",
+      "hidePropertyEnabled": false,
+      "hideProperty": ""
     },
     "desktop": {
       "enabled": true,
       "height": 240,
       "viewOffset": 0,
       "noteOffset": -32,
+      "bannerRadiusEnabled": false,
       "borderRadius": [
         8,
         8,
@@ -50,6 +53,7 @@
       ],
       "padding": 0,
       "fade": true,
+      "animation": false,
       "iconEnabled": false,
       "iconSize": 96,
       "iconRadius": 8,
@@ -59,14 +63,14 @@
       "iconAlignmentH": "flex-start",
       "iconAlignmentV": "flex-end",
       "iconOffsetX": 0,
-      "iconOffsetY": -24,
-      "animation": false
+      "iconOffsetY": -24
     },
     "tablet": {
       "enabled": true,
       "height": 190,
       "viewOffset": 0,
       "noteOffset": -32,
+      "bannerRadiusEnabled": false,
       "borderRadius": [
         8,
         8,
@@ -75,6 +79,7 @@
       ],
       "padding": 8,
       "fade": true,
+      "animation": false,
       "iconEnabled": false,
       "iconSize": 96,
       "iconRadius": 8,
@@ -91,6 +96,7 @@
       "height": 160,
       "viewOffset": 0,
       "noteOffset": -32,
+      "bannerRadiusEnabled": false,
       "borderRadius": [
         8,
         8,
@@ -99,6 +105,7 @@
       ],
       "padding": 8,
       "fade": true,
+      "animation": false,
       "iconEnabled": false,
       "iconSize": 56,
       "iconRadius": 8,
