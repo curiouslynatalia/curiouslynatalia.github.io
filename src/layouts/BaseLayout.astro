@@ -703,18 +703,18 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
             400: '#4d95f7', 500: '#1b61c2', 600: '#1c88dd', 700: '#1e40af',
             800: '#1e3a8a', 900: '#172554'
           }
-          mml: {
-  primary: {
-    50: '#FDFDFC', 100: '#F7F4EE', 200: '#E8E3D8', 300: '#D4CCBA',
-    400: '#B0A88E', 500: '#807A65', 600: '#5E5947', 700: '#444136',
-    800: '#2E2C24', 900: '#1E1C16', 950: '#111009'
-  },
-  highlight: {
-    50: '#F4F7EE', 100: '#E6EDD6', 200: '#CCDAAD', 300: '#B3C884',
-    400: '#98AA6E', 500: '#7D8F5A', 600: '#637448', 700: '#4A5836',
-    800: '#323D25', 900: '#1E2416', 950: '#111309'
-  }
-},
+        },
+        mml: {
+          primary: {
+            50: '#FDFDFC', 100: '#F7F4EE', 200: '#E8E3D8', 300: '#D4CCBA',
+            400: '#B0A88E', 500: '#807A65', 600: '#5E5947', 700: '#444136',
+            800: '#2E2C24', 900: '#1E1C16', 950: '#111009'
+          },
+          highlight: {
+            50: '#F4F7EE', 100: '#E6EDD6', 200: '#CCDAAD', 300: '#B3C884',
+            400: '#98AA6E', 500: '#7D8F5A', 600: '#637448', 700: '#4A5836',
+            800: '#323D25', 900: '#1E2416', 950: '#111309'
+          }
         }
       };
 
@@ -2199,33 +2199,6 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
 
   <!-- Additional body scripts -->
   <slot name="scripts" />
-  <script>
-  function addCopyButtons() {
-    document.querySelectorAll('pre.astro-code').forEach((block) => {
-      if (block.querySelector('.copy-btn')) return;
-      
-      const button = document.createElement('button');
-      button.className = 'copy-btn';
-      button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
-      button.setAttribute('aria-label', 'Copy code');
-      
-      button.addEventListener('click', () => {
-        const code = block.querySelector('code')?.innerText || '';
-        navigator.clipboard.writeText(code).then(() => {
-          button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 12 4 9"/></svg>`;
-          setTimeout(() => {
-            button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
-          }, 2000);
-        });
-      });
-
-      block.style.position = 'relative';
-      block.appendChild(button);
-    });
-  }
-
-  addCopyButtons();
-  document.addEventListener('swup:page:view', addCopyButtons);
-</script>
+  
 </body>
 </html>
