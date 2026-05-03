@@ -738,8 +738,13 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
 
         // Try to load the custom theme
         try {
-          // Import the custom theme dynamically
-          const customThemeModule = await import(`/src/themes/custom/${customThemeFile}.ts`);
+  // Use pre-loaded theme from themes object
+  if (themes[customThemeFile]) {
+    themes[themeName] = themes[customThemeFile];
+  }
+} catch (error) {
+  console.warn(`Could not load custom theme "${customThemeFile}"`);
+}
 
           // Look for the theme export - try different possible export names
           let themeData = null;
