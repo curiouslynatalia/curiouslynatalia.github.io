@@ -25,6 +25,7 @@ import { siteConfig } from './src/config.ts';
 import swup from '@swup/astro';
 import refreshContentOnChange from './src/integrations/refresh-content-on-change.ts';
 import { fileURLToPath } from 'node:url';
+import remarkLinkCard from 'remark-link-card-plus';
 
 // Deployment platform configuration
 const DEPLOYMENT_PLATFORM = process.env.DEPLOYMENT_PLATFORM || 'netlify';
@@ -86,12 +87,6 @@ export default defineConfig({
   '/contact-me': '/contact',
   '/contact-us': '/contact',
   '/privacy': '/privacy-policy',
-  '/posts/mermaid-test': '/posts/obsidian-embeds-demo',
-  '/posts/mermaid-diagram-test': '/posts/obsidian-embeds-demo',
-  '/posts/mermaid-diagrams': '/posts/obsidian-embeds-demo',
-  '/posts/astro-suite-vault-modular-guide': '/posts/vault-cms-guide',
-  '/posts/astro-suite-obsidian-vault-guide-astro-modular': '/posts/vault-cms-guide',
-  '/posts/obsidian-vault-guide': '/posts/vault-cms-guide',
   '/projects/obsidian-astro-composer': '/projects/astro-composer',
   '/projects/obsidian-astro-suite': '/projects/vault-cms',
   '/docs/api-reference': '/docs/api',
@@ -136,7 +131,7 @@ image: {
     })
   ],
   markdown: {
-      remarkPlugins: [
+    remarkPlugins: [
       remarkObsidianImageSize, // Parse Obsidian image size syntax first
       remarkInternalLinks,
       remarkInlineTags,
@@ -158,6 +153,7 @@ image: {
         maxDepth: 3,
         heading: 'contents|table[ -]of[ -]contents?|toc'
       }],
+      [remarkLinkCard, { cache: true, shortenUrl: true, thumbnailPosition: 'right' }],
     ],
     rehypePlugins: [
       rehypeKatex,

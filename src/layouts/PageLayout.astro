@@ -75,7 +75,7 @@ const structuredData = {
   <div class="py-8 relative">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 relative" style={`max-width: ${siteConfig.layout.contentWidth}`}>
       <!-- Page content -->
-      <article class={`bg-primary-50 dark:bg-primary-900 rounded-lg border border-primary-200 dark:border-primary-700 shadow-sm ${page.data.image ? 'overflow-hidden' : ''}`}>
+      <article class={`${page.data.image ? 'overflow-hidden' : ''}`}>
         {page.data.image && (() => {
           // Process image path similar to PostLayout
           let rawImage = page.data.image;
@@ -146,13 +146,11 @@ const structuredData = {
         })()}
 
         <!-- Page content wrapper -->
-        <div class={`p-6 ${page.data.image ? 'rounded-b-lg' : 'rounded-lg'}`}>
+        <div class="py-6">
           <!-- Page header -->
-          <header class="mb-4">
-            <h1 class="text-xl font-bold text-primary-900 dark:text-primary-50 mb-6 leading-tight">
-              {page.data.title}
-            </h1>
-          </header>
+          <header class="sr-only">
+  <h1>{page.data.title}</h1>
+</header>
 
           <!-- Page content -->
           <div class="prose dark:prose-dark max-w-none" id="page-content">
@@ -176,30 +174,7 @@ const structuredData = {
 
   <Fragment slot="scripts">
     <script>
-      // Initialize lightbox functionality for images
-      document.addEventListener('DOMContentLoaded', () => {
-        function initializeLightbox() {
-          const images = document.querySelectorAll('img');
-          images.forEach((img, index) => {
-            // Skip images that are already clickable (like in galleries)
-            if (img.closest('a') || img.closest('.image-grid')) {
-              return;
-            }
-
-            // Make image clickable
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', () => {
-              // Dispatch custom event to open lightbox
-              window.dispatchEvent(new CustomEvent('openLightbox', {
-                detail: { index }
-              }));
-            });
-          });
-        }
-
-        // Initialize lightbox after a short delay to ensure images are loaded
-        setTimeout(initializeLightbox, 200);
-      });
+      
       // Remove duplicate H1 from page content (since we render it in header)
       document.addEventListener('DOMContentLoaded', function() {
         const pageContent = document.getElementById('page-content');

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TopicGrid from '@/components/TopicGrid.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'start-here');
+if (!page) throw new Error('start-here page not found');
+const { Content } = await render(page);
+
+const seoData = {
+  title: 'Start Here — More Mindful Life',
+  description: 'A guide to getting the most out of More Mindful Life.'
+};
+---
+
+<BaseLayout seoData={seoData}>
+  <div class="py-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" style="max-width: 860px;">
+      <article class="prose dark:prose-dark max-w-none">
+        <Content />
+      </article>
+      <TopicGrid />
+    </div>
+  </div>
+</BaseLayout>

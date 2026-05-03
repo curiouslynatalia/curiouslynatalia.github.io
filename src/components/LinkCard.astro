@@ -1,0 +1,53 @@
+---
+interface Props {
+url: string;
+image?: string;
+}
+
+const { url, image } = Astro.props;
+
+let meta = {
+title: url,
+description: '',
+image: image || '',
+favicon: '',
+domain: ''
+};
+
+try {
+meta.domain = new URL(url).hostname;
+meta.favicon = 'https://www.google.com/s2/favicons?domain=' + meta.domain + '&sz=32';
+
+const response = await fetch(url, {
+headers: { 'User-Agent': 'Mozilla/5.0' }
+});
+const html = await response.text();
+
+const getTag = (property: string) => {
+const m1 = html.match(new RegExp('<meta[^>]*(?:property|name)=["\']' + property +
+  '["\'][^>]*content=["\']([^"\']*)["\']', 'i'));
+  const m2 = html.match(new RegExp('<meta[^>]*content=["\']([^"\']*)["\'][^>]*(?:property|name)=["\']' + property +
+    '["\']', 'i'));
+    return (m1 || m2)?.[1] || '';
+    };
+
+    meta.title = getTag('og:title') || url;
+    meta.description = getTag('og:description') || getTag('description') || '';
+    if (!image) {
+    meta.image = getTag('og:image') || '';
+    }
+    } catch (e) {}
+    ---
+
+    <a href={url} target="_blank" rel="noopener noreferrer" class="link-card">
+      { meta.image ? <div class="link-card-image"><img src={meta.image} alt={meta.title} loading="lazy" /></div> : null
+      }
+      <div class="link-card-content">
+        <div class="link-card-meta">
+          <img src={meta.favicon} alt="" class="link-card-favicon" />
+          <span class="link-card-domain">{meta.domain}</span>
+        </div>
+        <div class="link-card-title">{meta.title}</div>
+        { meta.description ? <div class="link-card-description">{meta.description}</div> : null }
+      </div>
+    </a>

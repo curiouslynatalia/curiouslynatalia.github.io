@@ -17,9 +17,9 @@ const shouldShowTOC = filteredHeadings.length > 1;
 ---
 
 {shouldShowTOC && (
-  <nav class="toc-nav toc-container p-4 pr-5 bg-white dark:bg-primary-900 rounded-xl border border-primary-200 dark:border-primary-700 shadow-lg backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95" data-max-depth={maxDepth}>
+  <nav class="toc-nav toc-container p-4 pr-5 bg-white dark:bg-primary-900 rounded-xl border border-primary-200 dark:border-primary-700 backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95" data-max-depth={maxDepth}>
     <button
-      class="toc-toggle w-full font-semibold text-primary-900 dark:text-primary-50 mb-3 flex items-center justify-between text-sm hover:text-highlight-600 dark:hover:text-highlight-400 transition-colors"
+      class="toc-toggle w-full font-semibold text-primary-900 dark:text-primary-50 mb-0 flex items-center justify-between text-sm hover:text-highlight-600 dark:hover:text-highlight-400 transition-colors"
       aria-expanded="true"
       aria-controls="toc-list"
     >
@@ -31,7 +31,7 @@ const shouldShowTOC = filteredHeadings.length > 1;
     </button>
 
     <div class="toc-content">
-      <ul class="space-y-2 toc-list" id="toc-list">
+      <ul class="space-y-2 toc-list mt-3" id="toc-list">
         {filteredHeadings.map(heading => (
           <li class={`toc-item toc-level-${heading.depth}`}>
             <a 
@@ -348,7 +348,7 @@ const shouldShowTOC = filteredHeadings.length > 1;
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-word;
-    hyphens: auto;
+    hyphens: none;
     line-height: 1.5;
     display: block;
     box-sizing: border-box;

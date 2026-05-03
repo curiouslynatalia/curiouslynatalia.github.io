@@ -162,7 +162,7 @@
     "headingFont": "Inter",
     "proseFont": "Inter",
     "monoFont": "JetBrains Mono",
-    "fontSource": "local",
+    "fontSource": "cdn",
     "fontDisplay": "swap",
     "customFonts": {
       "heading": "",
