@@ -24,7 +24,7 @@ export interface SiteConfig {
   defaultOgImageAlt: string;
 
   // Global Settings
-  theme: "custom";
+  theme: "mml";
   customThemeFile?: "mml"; // Filename in src/themes/custom/ (e.g., "my-cool-theme" for my-cool-theme.ts)
   availableThemes: [] | Array<string>; // Control which themes users can select - "default" shows all built-in themes, array can include custom theme filenames
   fonts: {
