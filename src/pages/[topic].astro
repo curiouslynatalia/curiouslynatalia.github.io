@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { topics } from '@/data/topics';
+import { shouldShowPost, sortPostsByDate } from '@/utils/markdown';
+
+export async function getStaticPaths() {
+return topics.map(topic => ({
+params: { topic: topic.slug },
+props: { topic }
+}));
+}
+
+const { topic } = Astro.props;
+const isDev = import.meta.env.DEV;
+
+const allPosts = await getCollection('posts');
+const topicPosts = allPosts
+.filter(post => shouldShowPost(post, isDev))
+.filter(post => post.data.tags?.includes(topic.tag))
+.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const postTypeTags = ['root', 'tree', 'sprout', 'seed'];
+
+const getPostType = (post: any) => {
+const type = post.data.tags?.find((t: string) => postTypeTags.includes(t.toLowerCase()));
+return type ? type.toUpperCase() : '';
+};
+
+const seoData = {
+title: `${topic.title} — More Mindful Life`,
+description: topic.description,
+};
+---
+
+<BaseLayout seoData={seoData}>
+  <div class="py-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8" style="max-width: 860px;">
+
+      <!-- Hero -->
+      <section class="mb-12">
+        <div class="overflow-hidden rounded-2xl mb-8" style="height: 200px;">
+          <img src={topic.image} alt={topic.title} class="w-full h-full object-cover" />
+        </div>
+        <h1 class="text-4xl font-normal text-primary-900 dark:text-primary-50 mb-3"
+          style="font-family: 'Averia Libre', serif;">{topic.title}</h1>
+        <p class="text-primary-600 dark:text-primary-300 max-w-xl">{topic.description}</p>
+      </section>
+
+      <!-- Post list -->
+      <section>
+        {topicPosts.length === 0 ? (
+        <p class="text-primary-500 dark:text-primary-400">No posts yet in this topic.</p>
+        ) : (
+        <ul>
+          {topicPosts.map(post => (
+          <li class="border-b border-primary-200 dark:border-primary-700">
+            <a href={`/posts/${post.id}`} class="flex items-center justify-between py-4 group">
+              <span
+                class="text-primary-900 dark:text-primary-50 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors">{post.data.title}</span>
+              <span
+                class="text-xs text-primary-400 dark:text-primary-500 uppercase tracking-widest ml-8 flex-shrink-0">{getPostType(post)}</span>
+            </a>
+          </li>
+          ))}
+        </ul>
+        )}
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

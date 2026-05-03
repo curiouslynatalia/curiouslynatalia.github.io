@@ -316,6 +316,18 @@ export const siteConfig: SiteConfig = {
     // [CONFIG:NAVIGATION_PAGES]
     pages: [
       { title: "Start here", url: "/start-here" },
+      {
+        title: "Explore",
+        url: "/explore",
+        children: [
+          { title: "Life Design", url: "/life-design" },
+          { title: "Digital Wellness", url: "/digital-wellness" },
+          { title: "Analog Systems", url: "/analog-systems" },
+          { title: "Digital Systems", url: "/digital-systems" },
+          { title: "Habits and Routines", url: "/habits-and-routines" },
+          { title: "Mindful Action", url: "/mindful-action" },
+        ]
+      },
       { title: "Articles", url: "/posts/" },
       {
         title: "About",

@@ -5,7 +5,9 @@ description: A brief description of the post for the card preview.
 tags:
   - attention
   - intention
-image: "[[attachments/galaxy.png]]"
+  - life-design
+  - Seed
+image:
 imageAlt: ""
 imageOG: false
 hideCoverImage: false
