@@ -801,7 +801,8 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
         }
       }
 
-      const theme = themes[themeName] || themes.oxygen;
+      const customFile = window.siteConfig?.customThemeFile || 'custom';
+const theme = themes[themeName] || themes[customFile] || themes.oxygen;
       const root = document.documentElement;
 
       // Update primary colors
