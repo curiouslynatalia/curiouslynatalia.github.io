@@ -17,9 +17,9 @@ const shouldShowTOC = filteredHeadings.length > 1;
 ---
 
 {shouldShowTOC && (
-  <nav class="toc-nav toc-container p-4 pr-5 bg-white dark:bg-primary-900 rounded-xl border border-primary-200 dark:border-primary-700 backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95" data-max-depth={maxDepth}>
+  <nav class="toc-nav toc-container p-4 pr-5 bg-primary-50 dark:bg-primary-900 rounded-xl border border-primary-200 dark:border-primary-700 backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95" data-max-depth={maxDepth}>
     <button
-      class="toc-toggle w-full font-semibold text-primary-900 dark:text-primary-50 mb-0 flex items-center justify-between text-sm hover:text-highlight-600 dark:hover:text-highlight-400 transition-colors"
+      class="toc-toggle w-full font-semibold text-primary-900 dark:text-primary-200 mb-0 flex items-center justify-between text-sm hover:text-highlight-600 dark:hover:text-highlight-400 transition-colors"
       aria-expanded="true"
       aria-controls="toc-list"
     >

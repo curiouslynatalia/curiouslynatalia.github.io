@@ -1,11 +1,11 @@
 ---
 const topics = [
   { name: 'Life<br/>Design', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/1bc9f661-eb27-443a-b803-c7a5e1590bf8/Life+Design.jpg?format=2500w', slug: 'life-design' },
-  { name: 'Digital Wellness', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/3ea37352-b06e-48de-98ce-d782aa43f137/Digital+Wellness.jpg?format=2500w', slug: 'digital-wellness' },
-  { name: 'Analog Systems', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/0f356fc6-397b-45f0-b09c-2d25c58e2be4/Analog+Systems.jpg?format=2500w', slug: 'analog-systems' },
-  { name: 'Digital Systems', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/157e2612-d089-4885-b2e7-97bd8b21ebc4/Digital+Systems.jpg?format=2500w', slug: 'digital-systems' },
-  { name: 'Habits and Routines', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/91791093-8e37-4feb-9b01-bceca64d3d39/Habits+and+Routines.jpg?format=2500w', slug: 'habits-and-routines' },
-  { name: 'Mindful Action', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/769c79ce-5edb-42db-b031-81f2f1999c6b/Mindful+Productivity.jpg?format=2500w', slug: 'mindful-action' },
+  { name: 'Digital<br/>Wellness', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/3ea37352-b06e-48de-98ce-d782aa43f137/Digital+Wellness.jpg?format=2500w', slug: 'digital-wellness' },
+  { name: 'Analog<br/>Systems', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/0f356fc6-397b-45f0-b09c-2d25c58e2be4/Analog+Systems.jpg?format=2500w', slug: 'analog-systems' },
+  { name: 'Digital<br/>Systems', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/157e2612-d089-4885-b2e7-97bd8b21ebc4/Digital+Systems.jpg?format=2500w', slug: 'digital-systems' },
+  { name: 'Habits and<br/>Routines', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/91791093-8e37-4feb-9b01-bceca64d3d39/Habits+and+Routines.jpg?format=2500w', slug: 'habits-and-routines' },
+  { name: 'Mindful<br/>Action', img: 'https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/769c79ce-5edb-42db-b031-81f2f1999c6b/Mindful+Productivity.jpg?format=2500w', slug: 'mindful-action' },
 ];
 
 interface Props {
@@ -16,7 +16,7 @@ const { showHeading = false } = Astro.props;
 ---
 
 {showHeading && (
-  <h2 class="text-3xl font-normal text-primary-900 dark:text-primary-50 mb-2 text-center" style="font-family: 'Averia Libre', serif;">Follow your curiosity</h2>
+  <h2 class="text-3xl font-normal text-primary-900 dark:text-primary-200 mb-2 text-center" style="font-family: 'Averia Libre', serif;">Follow your curiosity</h2>
   <p class="text-primary-600 dark:text-primary-300 mb-8 text-center">Pick a topic below and see where it takes you!</p>
 )}
 
@@ -25,7 +25,7 @@ const { showHeading = false } = Astro.props;
     <a href={`/posts/tag/${topic.slug}`} class="relative overflow-hidden rounded-lg group" style="aspect-ratio: 1/1;">
       <img src={topic.img} alt={topic.name} class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-      <h3 class="absolute inset-0 flex items-center justify-center text-white font-normal text-3xl text-center px-2 leading-tight" style="font-family: 'Averia Libre', serif;" set:html={topic.name}></h3>
+      <h3 class="absolute inset-0 flex items-center justify-center text-white font-normal text-2xl text-center px-2 leading-tight" style="font-family: 'Averia Libre', serif;" set:html={topic.name}></h3>
     </a>
   ))}
 </div>

@@ -15,6 +15,17 @@ hideTOC: false
 targetKeyword: ""
 draft: false
 ---
+FDFDFC - background
+F7F4EE - alt background
+807A65 - light beige
+444136 - dark brown (for text)
+424242 - soft black text
+98AA6E - accent green
+455646 - dark green
+F6D673 - yellow
+94B2BC - blue
+EF3D01 - red
+
 
 > Quick disclaimer:  
 > I am not affiliated with the app recommended in this article. I just wholeheartedly believe in it.

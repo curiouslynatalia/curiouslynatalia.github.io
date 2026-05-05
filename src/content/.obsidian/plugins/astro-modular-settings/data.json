@@ -1,7 +1,7 @@
 {
   "runWizardOnStartup": true,
   "currentTemplate": "standard",
-  "currentTheme": "minimal",
+  "currentTheme": "custom",
   "customThemeFile": "custom",
   "contentOrganization": "file-based",
   "themeColors": {
@@ -13,7 +13,7 @@
   },
   "siteInfo": {
     "site": "https://curiouslynatalia.github.io/",
-    "title": "curiously natalia",
+    "title": "more mindful life",
     "description": "reclaim your attention. reclaim your life.",
     "author": "natalia",
     "language": "en",
@@ -25,7 +25,7 @@
   },
   "tableOfContents": {
     "enabled": true,
-    "depth": 4
+    "depth": 3
   },
   "footer": {
     "enabled": true,
@@ -37,16 +37,56 @@
   },
   "navigation": {
     "showNavigation": true,
-    "style": "traditional",
+    "style": "minimal",
     "showMobileMenu": true,
     "pages": [
       {
-        "title": "Articles",
-        "url": "/articles/"
+        "title": "Start here",
+        "url": "/start-here"
+      },
+      {
+        "title": "Explore",
+        "url": "/explore",
+        "children": [
+          {
+            "title": "Life Design",
+            "url": "/life-design"
+          },
+          {
+            "title": "Digital Wellness",
+            "url": "/digital-wellness"
+          },
+          {
+            "title": "Analog Systems",
+            "url": "/analog-systems"
+          },
+          {
+            "title": "Digital Systems",
+            "url": "/digital-systems"
+          },
+          {
+            "title": "Habits and Routines",
+            "url": "/habits-and-routines"
+          },
+          {
+            "title": "Mindful Action",
+            "url": "/mindful-action"
+          }
+        ]
       },
       {
         "title": "About",
-        "url": "/about/"
+        "url": "/about",
+        "children": [
+          {
+            "title": "More Mindful Life",
+            "url": "/about"
+          },
+          {
+            "title": "Natalia",
+            "url": "/about-natalia"
+          }
+        ]
       }
     ],
     "social": [
@@ -68,7 +108,7 @@
       "docs": false
     },
     "sections": {
-      "quickActions": true,
+      "quickActions": false,
       "pages": true,
       "social": true
     },
@@ -76,35 +116,35 @@
       "enabled": true,
       "toggleMode": true,
       "graphView": true,
-      "changeTheme": true
+      "changeTheme": false
     }
   },
   "homeOptions": {
     "featuredPost": {
-      "enabled": true,
+      "enabled": false,
       "type": "latest",
       "slug": "getting-started"
     },
     "recentPosts": {
-      "enabled": true,
+      "enabled": false,
       "count": 7
     },
     "projects": {
-      "enabled": true,
+      "enabled": false,
       "count": 2
     },
     "docs": {
-      "enabled": true,
+      "enabled": false,
       "count": 3
     },
     "blurb": {
-      "placement": "below"
+      "placement": "none"
     }
   },
   "postOptions": {
     "postsPerPage": 6,
     "readingTime": true,
-    "wordCount": true,
+    "wordCount": false,
     "tags": true,
     "linkedMentions": {
       "enabled": true,
@@ -148,35 +188,35 @@
     "hideScrollBar": false,
     "scrollToTop": true,
     "showSocialIconsInFooter": true,
-    "profilePicture": false,
+    "profilePicture": true,
     "comments": false,
     "featureButton": "mode",
     "quickActions": {
       "enabled": true,
       "toggleMode": true,
       "graphView": true,
-      "changeTheme": true
+      "changeTheme": false
     }
   },
   "typography": {
-    "headingFont": "Inter",
+    "headingFont": "Averia Libre",
     "proseFont": "Inter",
     "monoFont": "JetBrains Mono",
     "fontSource": "cdn",
     "fontDisplay": "swap",
     "customFonts": {
-      "heading": "",
-      "prose": "",
-      "mono": "",
+      "heading": "Averia Libre",
+      "prose": "Inter",
+      "mono": "JetBrains Mono",
       "urls": ""
     }
   },
   "optionalFeatures": {
     "profilePicture": {
-      "enabled": false,
+      "enabled": true,
       "image": "/profile.jpg",
       "alt": "Profile picture",
-      "size": "md",
+      "size": "sm",
       "url": "",
       "placement": "footer",
       "style": "circle"
@@ -217,11 +257,14 @@
     }
   },
   "optionalContentTypes": {
-    "projects": true,
-    "docs": true
+    "projects": false,
+    "docs": false
   },
-  "availableThemes": "default",
-  "customThemes": "",
+  "availableThemes": [
+    "minimal",
+    "flexoki"
+  ],
+  "customThemes": "mml",
   "customThemeGenerationEnabled": false,
   "removeRibbonIcon": false
 }

@@ -196,7 +196,7 @@ const structuredData = {
       <span class="text-white leading-relaxed text-base">Written for those who want to live fully, on their own terms.</span>
     </p>
     <a href="https://betterthanreels.substack.com" target="_blank" rel="noopener noreferrer"
-      class="inline-flex items-center px-4 py-2 bg-white text-primary-900 font-medium rounded-full hover:bg-white transition-colors duration-200 w-fit">
+      class="btn btn-secondary rounded-full">
       Join now →
     </a>
   </div>
@@ -204,35 +204,36 @@ const structuredData = {
 
 <!-- Start Here Section -->
 <section class="mb-16 py-12 px-8 bg-primary-100 dark:bg-primary-800 rounded-2xl flex flex-col items-center text-center">
-  <h2 class="text-2xl font-normal text-primary-900 dark:text-primary-50 mb-3" style="font-family: 'Averia Libre', serif;">Is it your first time here?</h2>
+  <h2 class="text-2xl font-normal text-primary-900 dark:text-primary-200 mb-3" style="font-family: 'Averia Libre', serif;">Is it your first time here?</h2>
   <p class="text-primary-600 dark:text-primary-300 mb-6 max-w-xl">Things work a little different around here so I put together a guide to show you how to explore this website.</p>
-  <a href="/start-here" class="inline-flex items-center px-4 py-2 border border-primary-300 dark:border-primary-600 text-primary-700 dark:text-primary-200 font-medium rounded-full hover:border-primary-500 transition-colors duration-200">
+  <a href="/start-here" class="btn btn-primary rounded-full">
     Start here →
   </a>
 </section>
 
 <!-- Topic Grid -->
 <section class="mb-16">
-  <h2 class="text-3xl font-normal text-primary-900 dark:text-primary-50 mb-2 text-center" style="font-family: 'Averia Libre', serif;">Follow your curiosity</h2>
+  <h2 class="text-3xl font-normal text-primary-900 dark:text-primary-200 mb-2 text-center" style="font-family: 'Averia Libre', serif;">Follow your curiosity</h2>
   <p class="text-primary-600 dark:text-primary-300 mb-8 text-center">Pick a topic below and see where it takes you!</p>
   <TopicGrid />
 </section>
 
 <!-- About Section -->
-<section class="mb-16 py-12 border-t border-b border-primary-200 dark:border-primary-700 flex flex-col sm:flex-row gap-8 items-center">
+<section class="mb-16 py-12 border-t border-b border-primary-200 dark:border-primary-700 flex flex-col sm:flex-row gap-12 items-center">
   <div class="flex-1">
-    <p class="text-xs font-bold tracking-widest uppercase mb-4 bg-primary-100 dark:bg-primary-800 text-primary-500 dark:text-primary-400 px-2 py-1.5 rounded-md inline-block">The human behind the website</p>
-    <p class="text-xl font-normal text-primary-900 dark:text-primary-50 mb-4 leading-snug">Hey, I'm Natalia, a designer, maker and deep thinker based in Australia.</p>
+    <p class="eyebrow mb-4">The human behind the website</p>
+    <p class="text-xl font-normal text-primary-900 dark:text-primary-200 mb-4 leading-snug">Hey, I'm Natalia, a designer, maker and deep thinker based in Australia.</p>
     <p class="text-sm text-primary-500 dark:text-primary-400 mb-6 leading-relaxed">I created More Mindful Life to share everything I've learned over the last 6+ years building a life that's true to me so that others can use this information to build a life that's true to them.</p>
-    <a href="/about" class="text-primary-700 dark:text-primary-200 font-medium underline underline-offset-4 hover:text-primary-500 transition-colors duration-200">
+    <a href="/about" class="btn btn-tertiary">
       Learn more
     </a>
   </div>
   <img
     src="https://images.squarespace-cdn.com/content/v1/68ffe9176e8683326214ec5a/1761601816866-GTIKFKB864XGZ7LMWVMP/Natalia-Nature-forthedogooders.jpg"
     alt="Natalia in nature"
-    class="w-48 h-48 object-cover rounded-lg flex-shrink-0"
+    class="w-56 h-56 object-cover rounded-xl flex-shrink-0"
   />
+</section>
 </section>
       {onlyBlurbContent ? (
         <!-- Blurb-only homepage with page-like layout -->
@@ -241,7 +242,7 @@ const structuredData = {
             <!-- Page header -->
             {homeBlurbContent?.data.title && (
               <header class="mb-4">
-                <h1 class="text-xl font-bold text-primary-900 dark:text-primary-50 mb-6 leading-tight">
+                <h1 class="text-xl font-bold text-primary-900 dark:text-primary-200 mb-6 leading-tight">
                   {homeBlurbContent.data.title}
                 </h1>
               </header>
@@ -266,7 +267,7 @@ const structuredData = {
           {siteConfig.homeOptions.featuredPost.enabled && featuredPost && (
             <section class="mb-12">
               <div class="flex items-center justify-between mb-6">
-                <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-50">
+                <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-200">
                   {siteConfig.homeOptions.featuredPost.type === "latest" ? "Latest Post" : "Featured Post"}
                 </h2>
               </div>
@@ -280,7 +281,7 @@ const structuredData = {
             <section class="mb-12">
               {!useSpecialTreatment && (
                 <div class="flex items-center justify-between mb-6">
-                  <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-50">
+                  <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-200">
                     Recent Posts
                   </h2>
                   <a
@@ -316,7 +317,7 @@ const structuredData = {
             <section class="mb-12">
               {!useSpecialTreatment && (
                 <div class="flex items-center justify-between mb-6">
-                  <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-50">
+                  <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-200">
                     Projects
                   </h2>
                   <a
@@ -352,7 +353,7 @@ const structuredData = {
             <section class="mb-12">
               {!useSpecialTreatment && (
                 <div class="flex items-center justify-between mb-6">
-                  <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-50">
+                  <h2 class="text-lg font-semibold text-primary-900 dark:text-primary-200">
                     Documentation
                   </h2>
                   <a
@@ -395,8 +396,8 @@ const structuredData = {
         <!-- Empty state -->
         <section class="text-center py-16">
           <div class="max-w-md mx-auto">
-            <Icon name="file-text" class="w-16 h-16 text-primary-400 dark:text-primary-500 mx-auto mb-6" />
-            <h2 class="text-2xl font-semibold text-primary-900 dark:text-primary-50 mb-4">
+            <Icon name="file-text" class="w-16 h-16 text-primary-400 dark:text-primary-2000 mx-auto mb-6" />
+            <h2 class="text-2xl font-semibold text-primary-900 dark:text-primary-200 mb-4">
               No Posts Yet
             </h2>
             <p class="text-primary-600 dark:text-primary-300 mb-8">
@@ -431,13 +432,4 @@ const structuredData = {
   });
 </script>
 
-<style>
-  /* Enhanced homepage styles */
-  .btn-primary {
-    @apply inline-flex items-center px-6 py-3 font-medium rounded-lg transition-all duration-200 hover:shadow-lg transform hover:scale-105;
-  }
 
-  .btn-primary:focus-visible {
-    @apply outline-none ring-2 ring-highlight-500 ring-offset-2;
-  }
-</style>

@@ -1,7 +1,7 @@
 
 ---
 export interface Props {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'tertiary';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   target?: string;
@@ -24,7 +24,7 @@ const {
 } = Astro.props;
 
 // Base button classes
-const baseClasses = 'btn inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background cursor-pointer border no-underline';
+const baseClasses = 'btn inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background cursor-pointer border no-underline';
 
 // Size variations
 const sizeClasses = {
@@ -38,7 +38,8 @@ const variantClasses = {
   primary: 'btn-primary',
   secondary: 'btn-secondary',
   outline: 'btn-outline',
-  ghost: 'btn-ghost'
+  ghost: 'btn-ghost',
+  tertiary: 'btn-tertiary'
 };
 
 const allClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;

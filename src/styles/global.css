@@ -201,7 +201,7 @@ p:has(.katex-display) {
   --inline-code-text: 33 33 33;
 
   /* Highlight/selection colors */
-  --selection-bg: 112 135 148;
+  --selection-bg: 232 227 216;
 }
 
 .dark {
@@ -223,7 +223,7 @@ html {
 }
 
 body {
-  @apply bg-primary-50 dark:bg-primary-900 text-primary-900 dark:text-primary-100;
+  @apply bg-primary-50 dark:bg-primary-900 text-primary-700 dark:text-primary-100;
   font-family: var(--font-prose, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   text-rendering: optimizeLegibility;
@@ -298,12 +298,12 @@ html.show-scrollbars {
 
 /* Selection Colors */
 ::selection {
-  background-color: rgb(var(--selection-bg) / 0.2);
+  background-color: rgba(232, 227, 216, 0.4);
   color: inherit;
 }
 
 ::-moz-selection {
-  background-color: rgb(var(--selection-bg) / 0.2);
+  background-color: rgba(232, 227, 216, 0.4);
   color: inherit;
 }
 
@@ -339,21 +339,24 @@ h6 {
   font-display: var(--font-display, swap);
 }
 
+.heading-1,
 h1 {
   font-size: 1.875rem;
   font-weight: 400;
   line-height: 1.3;
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  @apply text-primary-900 dark:text-primary-200;
 }
 
 /* Links */
 a {
-  @apply text-highlight-600 dark:text-highlight-400 no-underline transition-colors duration-200;
+  @apply text-highlight-600 dark:text-highlight-400 no-underline;
+  transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out !important;
 }
 
 a:hover {
-  @apply text-highlight-700 dark:text-highlight-300 opacity-80;
+  @apply text-highlight-700 dark:text-highlight-300;
+  opacity: 0.8;
 }
 
 /* Wikilinks */
@@ -492,7 +495,7 @@ kbd {
 
 /* Button Styles - Consolidated */
 .btn {
-  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer border no-underline;
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer border no-underline;
   text-decoration: none !important;
   user-select: none;
   vertical-align: middle;
@@ -508,16 +511,34 @@ kbd {
 }
 
 .btn-primary {
-  @apply bg-highlight-600 dark:bg-highlight-400 text-white dark:text-white border-highlight-600 dark:border-highlight-400;
-  transition: all 0.15s ease-out;
+  @apply bg-highlight-400 dark:bg-highlight-400 text-white dark:text-white border-highlight-400 dark:border-highlight-400 rounded-full px-3 py-2;
+  transition: all 0.2s ease-in-out !important;
 }
 
 .btn-primary:hover {
-  opacity: 0.9;
+  @apply bg-transparent text-highlight-400 dark:text-highlight-400 border-highlight-400 dark:border-highlight-400;
 }
 
 .btn-secondary {
-  @apply bg-primary-100 dark:bg-primary-800 text-primary-900 dark:text-primary-100 hover:bg-primary-200 dark:hover:bg-primary-700 border-primary-200 dark:border-primary-700;
+  @apply bg-primary-50 dark:bg-primary-50 text-primary-900 dark:text-primary-900 border-white dark:border-white rounded-full px-3 py-2;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn-secondary:hover {
+  @apply bg-transparent text-white dark:text-white border-white dark:border-white;
+}
+
+.btn-tertiary {
+  @apply bg-transparent border-transparent text-primary-700 dark:text-primary-300 text-sm font-normal px-0 py-0;
+  text-decoration: underline !important;
+  text-underline-offset: 6px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn-tertiary:hover {
+  opacity: 0.6;
+  text-decoration: underline !important;
+  text-underline-offset: 6px !important;
 }
 
 .btn-outline {
@@ -549,7 +570,7 @@ kbd {
 
 /* Card Styles */
 .card {
-  @apply bg-white dark:bg-primary-900 border border-primary-200 dark:border-primary-700 rounded-lg shadow-sm;
+  @apply bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 rounded-lg shadow-sm;
 }
 
 /* Form Styles */
@@ -557,7 +578,7 @@ input[type="text"],
 input[type="email"],
 input[type="search"],
 textarea {
-  @apply block w-full px-3 py-2 border border-primary-300 dark:border-primary-600 rounded-lg bg-white dark:bg-primary-800 text-primary-900 dark:text-primary-100 placeholder-primary-500 dark:placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-highlight-500 focus:border-transparent;
+  @apply block w-full px-3 py-2 border border-primary-300 dark:border-primary-600 rounded-lg bg-primary-50 dark:bg-primary-800 text-primary-900 dark:text-primary-100 placeholder-primary-500 dark:placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-highlight-500 focus:border-transparent;
 }
 
 .form-sleek {
@@ -805,15 +826,11 @@ textarea {
   border: none;
   background: none;
   padding: 0;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .callout-eyebrow .callout-title {
-  @apply inline-block px-3 py-1 bg-primary-100 dark:bg-primary-800 rounded-lg text-primary-500 dark:text-primary-400;
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  @apply eyebrow;
 }
 
 .callout-eyebrow .callout-icon {
@@ -830,7 +847,7 @@ textarea {
   border: none;
   background: none;
   padding: 0;
-  margin: 0.5rem 0 2rem 0;
+  margin: 2rem 0 2rem 0 !important;
 }
 
 .callout-hero .callout-title {
@@ -842,11 +859,10 @@ textarea {
 }
 
 .callout-hero .callout-content {
+  @apply heading-1;
+  font-family: 'Averia Libre', serif;
   font-size: 2.25rem;
   line-height: 1.2;
-  font-family: 'Averia Libre', serif;
-  font-weight: 400;
-  color: inherit;
 }
 
 .callout-hero .callout-content p {
@@ -1056,7 +1072,7 @@ textarea {
 .prose h4,
 .prose h5,
 .prose h6 {
-  @apply font-normal text-primary-900 dark:text-primary-50;
+  @apply font-normal text-primary-900 dark:text-primary-200;
   font-family: var(--font-heading, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   scroll-margin-top: 8rem;
   font-display: var(--font-display, swap);
@@ -1092,7 +1108,7 @@ textarea {
 .prose h4 a,
 .prose h5 a,
 .prose h6 a {
-  @apply text-primary-400 dark:text-primary-50 no-underline transition-colors duration-200;
+  @apply text-primary-400 dark:text-primary-200 no-underline transition-colors duration-200;
 }
 
 .prose h1 a:hover,
@@ -1113,21 +1129,37 @@ textarea {
   @apply text-highlight-700 dark:text-highlight-300 underline underline-offset-4 transition-colors duration-200;
 }
 
+.prose a[href*="/posts/tag/"] {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+
+.prose a[href*="/posts/tag/"]:hover {
+  text-decoration: none !important;
+}
+
+.prose a[href*="/posts/tag/"] {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  color: inherit !important;
+}
 
 .prose strong {
   @apply text-primary-900 dark:text-primary-200 font-semibold;
 }
 
 .prose blockquote {
-  border-left: 2px solid rgba(0, 0, 0, 0.15);
+  border-left: 2px solid #B3C884;
   margin: 0 0 1.75em 0.125em;
   padding: 0 0 0 1.375em;
   background: none;
   border-radius: 0;
+  @apply text-primary-700 dark:text-primary-300;
 }
 
 .dark .prose blockquote {
-  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  border-left: 2px solid #B3C884;
+  @apply text-primary-700 dark:text-primary-300;
 }
 
 .prose blockquote p {
@@ -1257,7 +1289,7 @@ textarea {
   -webkit-overflow-scrolling: touch;
   margin: 1.5rem 0 !important;
   border-radius: 0.75rem !important;
-  @apply border border-primary-300 dark:border-primary-600 bg-white dark:bg-primary-800;
+  @apply border border-primary-300 dark:border-primary-600 bg-primary-50 dark:bg-primary-800;
   position: relative;
   /* Enable edge hint pseudo-elements */
 }
@@ -1795,7 +1827,7 @@ img+p em {
   }
 
   body {
-    @apply text-black bg-white;
+    @apply text-black bg-primary-50;
   }
 
   a {
@@ -2170,9 +2202,9 @@ pre.astro-code:hover .copy-btn {
 }
 
 .eyebrow {
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  @apply inline-block px-3 py-1 bg-primary-100 dark:bg-primary-800 rounded-lg text-primary-500 dark:text-primary-400;
+  @apply inline-block px-2 py-1 bg-primary-100 dark:bg-primary-800 rounded-md text-primary-500 dark:text-primary-400;
 }

@@ -30,7 +30,7 @@ const allSectionsDisabled = !siteConfig.commandPalette.sections.quickActions &&
 const paletteIcon = allSectionsDisabled ? 'search' : 'command';
 ---
 
-<header id="main-header" class="sticky top-0 z-40 w-full bg-white dark:bg-primary-950 transition-shadow duration-200">
+<header id="main-header" class="sticky top-0 z-40 w-full bg-primary-50 dark:bg-primary-950 transition-shadow duration-200">
   <div class="mx-auto px-4 sm:px-6 lg:px-8" style={`max-width: ${siteConfig.layout.contentWidth}`}>
     <div class="flex items-center justify-between h-16">
       <!-- Logo / Site Title / Profile Picture -->
@@ -43,7 +43,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
               class={getHeaderProfilePictureClasses(profilePicture.style)}
             />
           ) : (
-            <span class="font-semibold text-primary-900 dark:text-primary-50">
+            <span class="font-semibold text-primary-900 dark:text-primary-200">
               {siteConfig.title}
             </span>
           )}
@@ -80,9 +80,9 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                       >
                         <span>{siteConfig.navigation.style === 'minimal' ? page.title.toLowerCase() : page.title}</span>
                         {page.url.startsWith('http') && (
-                          <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-500" />
+                          <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-2000" />
                         )}
-                        <Icon name="chevron-down" class="w-3 h-3 ml-1 text-primary-400 dark:text-primary-500" title={page.title} />
+                        <Icon name="chevron-down" class="w-3 h-3 ml-1 text-primary-400 dark:text-primary-2000" title={page.title} />
                       </a>
                     ) : (
                       // Dropdown-only parent (non-clickable trigger)
@@ -97,11 +97,11 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                         aria-expanded="false"
                       >
                         <span>{siteConfig.navigation.style === 'minimal' ? page.title.toLowerCase() : page.title}</span>
-                        <Icon name="chevron-down" class="w-3 h-3 ml-1 text-primary-400 dark:text-primary-500" title={page.title} />
+                        <Icon name="chevron-down" class="w-3 h-3 ml-1 text-primary-400 dark:text-primary-2000" title={page.title} />
                       </button>
                     )}
                     {/* Dropdown menu */}
-                    <div class="nav-dropdown-menu absolute top-full left-0 mt-1 hidden bg-white dark:bg-primary-900 border border-primary-200 dark:border-primary-700 rounded-lg shadow-lg py-2 min-w-[200px] z-50">
+                    <div class="nav-dropdown-menu absolute top-full left-0 mt-1 hidden bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-700 rounded-lg shadow-lg py-2 min-w-[200px] z-50">
                       {page.children.map(child => (
                         <a
                           href={child.url || '#'}
@@ -111,7 +111,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                         >
                           {child.title}
                           {child.url?.startsWith('http') && (
-                            <Icon name="external-link" class="w-3 h-3 ml-2 inline text-primary-400 dark:text-primary-500" />
+                            <Icon name="external-link" class="w-3 h-3 ml-2 inline text-primary-400 dark:text-primary-2000" />
                           )}
                         </a>
                       ))}
@@ -133,7 +133,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                   >
                     <span>{siteConfig.navigation.style === 'minimal' ? page.title.toLowerCase() : page.title}</span>
                     {page.url?.startsWith('http') && (
-                      <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-500" />
+                      <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-2000" />
                     )}
                   </a>
                 );
@@ -229,7 +229,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                       >
                         <span>{page.title}</span>
                         {page.url.startsWith('http') && (
-                          <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-500" />
+                          <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-2000" />
                         )}
                       </a>
                     ) : (
@@ -258,7 +258,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                       >
                         {child.title}
                         {child.url?.startsWith('http') && (
-                          <Icon name="external-link" class="w-3 h-3 ml-2 inline text-primary-400 dark:text-primary-500" />
+                          <Icon name="external-link" class="w-3 h-3 ml-2 inline text-primary-400 dark:text-primary-2000" />
                         )}
                       </a>
                     ))}
@@ -276,7 +276,7 @@ const paletteIcon = allSectionsDisabled ? 'search' : 'command';
                 >
                   <span>{page.title}</span>
                   {page.url?.startsWith('http') && (
-                    <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-500" />
+                    <Icon name="external-link" class="w-3 h-3 text-primary-400 dark:text-primary-2000" />
                   )}
                 </a>
               );

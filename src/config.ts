@@ -185,7 +185,7 @@ export const siteConfig: SiteConfig = {
   // [CONFIG:SITE_URL]
   site: "https://curiouslynatalia.github.io/",
   // [CONFIG:SITE_TITLE]
-  title: "curiously natalia",
+  title: "more mindful life",
   // [CONFIG:HOMEPAGE_TITLE]
   homepageTitle: "",
   // [CONFIG:SITE_DESCRIPTION]
@@ -205,7 +205,7 @@ export const siteConfig: SiteConfig = {
   // [CONFIG:CUSTOM_THEME_FILE]
   customThemeFile: "mml", // Only used if theme is set to "custom" above. Filename in src/themes/custom/ (without .ts extension)
   // [CONFIG:AVAILABLE_THEMES]
-  availableThemes: ["mml"], // "default" to show all built-in themes, or array of theme names like ["oxygen", "minimal", "obsidianite"] to limit choices (can include custom theme filenames)
+  availableThemes: ["minimal", "flexoki", "mml"], // "default" to show all built-in themes, or array of theme names like ["oxygen", "minimal", "obsidianite"] to limit choices (can include custom theme filenames)
   fonts: {
     // [CONFIG:FONT_SOURCE]
     source: "cdn", // "local" for self-hosted @fontsource fonts, "cdn" for Google Fonts CDN
@@ -228,7 +228,7 @@ export const siteConfig: SiteConfig = {
     // [CONFIG:TABLE_OF_CONTENTS_ENABLED]
     enabled: true,
     // [CONFIG:TABLE_OF_CONTENTS_DEPTH]
-    depth: 4, // Maximum heading depth to include in ToC (2-6, where 2=H2, 3=H3, etc.)
+    depth: 3, // Maximum heading depth to include in ToC (2-6, where 2=H2, 3=H3, etc.)
   },
   footer: {
     // [CONFIG:FOOTER_ENABLED]
@@ -269,7 +269,7 @@ export const siteConfig: SiteConfig = {
     },
     sections: {
       // [CONFIG:COMMAND_PALETTE_SECTIONS_QUICK_ACTIONS]
-      quickActions: true,
+      quickActions: false,
       // [CONFIG:COMMAND_PALETTE_SECTIONS_PAGES]
       pages: true,
       // [CONFIG:COMMAND_PALETTE_SECTIONS_SOCIAL]
@@ -290,13 +290,13 @@ export const siteConfig: SiteConfig = {
   // Profile Picture
   profilePicture: {
     // [CONFIG:PROFILE_PICTURE_ENABLED]
-    enabled: false,
+    enabled: true,
     // [CONFIG:PROFILE_PICTURE_IMAGE]
     image: "/profile.jpg", // Path to your profile image (place in public/ directory)
     // [CONFIG:PROFILE_PICTURE_ALT]
     alt: "Profile picture",
     // [CONFIG:PROFILE_PICTURE_SIZE]
-    size: "md", // "sm" (32px), "md" (48px), or "lg" (64px) - only affects footer placement
+    size: "sm", // "sm" (32px), "md" (48px), or "lg" (64px) - only affects footer placement
     // [CONFIG:PROFILE_PICTURE_URL]
     url: "", // Optional
     // [CONFIG:PROFILE_PICTURE_PLACEMENT]
@@ -317,26 +317,23 @@ export const siteConfig: SiteConfig = {
     pages: [
       { title: "Start here", url: "/start-here" },
       {
-        title: "Explore",
-        url: "/explore",
+        title: "Explore", url: "/explore",
         children: [
           { title: "Life Design", url: "/life-design" },
           { title: "Digital Wellness", url: "/digital-wellness" },
           { title: "Analog Systems", url: "/analog-systems" },
           { title: "Digital Systems", url: "/digital-systems" },
           { title: "Habits and Routines", url: "/habits-and-routines" },
-          { title: "Mindful Action", url: "/mindful-action" },
+          { title: "Mindful Action", url: "/mindful-action" }
         ]
       },
-      { title: "Articles", url: "/posts/" },
       {
-        title: "About",
-        url: "/about",
+        title: "About", url: "/about",
         children: [
           { title: "More Mindful Life", url: "/about" },
-          { title: "Natalia", url: "/about-natalia" },
+          { title: "Natalia", url: "/about-natalia" }
         ]
-      },
+      }
     ],
     // [CONFIG:NAVIGATION_SOCIAL]
     social: [
@@ -397,7 +394,7 @@ export const siteConfig: SiteConfig = {
     // [CONFIG:POST_OPTIONS_READING_TIME]
     readingTime: true,
     // [CONFIG:POST_OPTIONS_WORD_COUNT]
-    wordCount: true,
+    wordCount: false,
     // [CONFIG:POST_OPTIONS_TAGS]
     tags: true,
     linkedMentions: {

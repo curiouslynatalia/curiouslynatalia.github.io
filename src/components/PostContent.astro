@@ -53,7 +53,7 @@ const processedImage = (() => {
     <div class="lg:col-span-8 xl:col-span-9">
       <!-- Article header -->
       <header class="mb-8">
-        <h1 class="text-3xl sm:text-4xl font-bold text-primary-900 dark:text-primary-50 mb-6 leading-tight">
+        <h1 class="text-3xl sm:text-4xl font-bold text-primary-900 dark:text-primary-200 mb-6 leading-tight">
           {post.data.title}
         </h1>
 
@@ -195,13 +195,13 @@ const processedImage = (() => {
 
         <!-- Post meta info -->
         <div class="p-6 bg-primary-50 dark:bg-primary-800/50 rounded-xl">
-          <h3 class="font-semibold text-primary-900 dark:text-primary-50 mb-4">
+          <h3 class="font-semibold text-primary-900 dark:text-primary-200 mb-4">
             Post Information
           </h3>
           <div class="space-y-3 text-sm">
             <div class="flex justify-between">
               <span class="text-primary-600 dark:text-primary-300">Published</span>
-              <span class="text-primary-900 dark:text-primary-50">
+              <span class="text-primary-900 dark:text-primary-200">
                 {formatDate(post.data.date)}
               </span>
             </div>
@@ -209,21 +209,21 @@ const processedImage = (() => {
             {readingTime && (
               <div class="flex justify-between">
                 <span class="text-primary-600 dark:text-primary-300">Reading time</span>
-                <span class="text-primary-900 dark:text-primary-50">{readingTime.text}</span>
+                <span class="text-primary-900 dark:text-primary-200">{readingTime.text}</span>
               </div>
             )}
 
             {wordCount && (
               <div class="flex justify-between">
                 <span class="text-primary-600 dark:text-primary-300">Word count</span>
-                <span class="text-primary-900 dark:text-primary-50">{wordCount.toLocaleString()}</span>
+                <span class="text-primary-900 dark:text-primary-200">{wordCount.toLocaleString()}</span>
               </div>
             )}
 
             {post.data.targetKeyword && (
               <div class="flex justify-between">
                 <span class="text-primary-600 dark:text-primary-300">Target keyword</span>
-                <span class="text-primary-900 dark:text-primary-50 text-right">{post.data.targetKeyword}</span>
+                <span class="text-primary-900 dark:text-primary-200 text-right">{post.data.targetKeyword}</span>
               </div>
             )}
           </div>

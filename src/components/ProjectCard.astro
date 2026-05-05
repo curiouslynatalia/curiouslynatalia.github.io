@@ -64,7 +64,7 @@ const hasHoverContent = hasDescription || hasCategories;
 const shouldShowCoverImage = true;
 ---
 
-<div class="group relative bg-white dark:bg-primary-800 rounded-xl border border-primary-200 dark:border-primary-700 overflow-hidden hover:shadow-xl transition-all duration-300 aspect-[4/3]" data-project-categories={categories.join(',')}>
+<div class="group relative bg-primary-50 dark:bg-primary-800 rounded-xl border border-primary-200 dark:border-primary-700 overflow-hidden hover:shadow-xl transition-all duration-300 aspect-[4/3]" data-project-categories={categories.join(',')}>
   <a href={`/projects/${project.id}`} class="block h-full" aria-label={`View project: ${title}`}>
     <!-- Background Image or Fallback -->
     {image && shouldShowCoverImage && (
@@ -177,7 +177,7 @@ const shouldShowCoverImage = true;
       <h3 class={`text-xl font-bold transition-colors line-clamp-2 text-center ${
         image && shouldShowCoverImage
           ? 'text-white group-hover:text-highlight-300 drop-shadow-lg'
-          : 'text-primary-900 dark:text-primary-50 group-hover:text-highlight-600 dark:group-hover:text-highlight-400'
+          : 'text-primary-900 dark:text-primary-200 group-hover:text-highlight-600 dark:group-hover:text-highlight-400'
       } ${
         // Adjust margin based on content
         !hasDescription && !hasCategories ? 'mb-0' :

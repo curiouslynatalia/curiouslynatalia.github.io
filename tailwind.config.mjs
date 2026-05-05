@@ -7,6 +7,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontSize: {
+        sm: '0.8rem',
+      },
       fontFamily: {
         'sans': getFontFamily(siteConfig.fonts.families.body).split(', '),
         'heading': getFontFamily(siteConfig.fonts.families.heading).split(', '),
@@ -52,16 +55,18 @@ export default {
             },
             'h1, h2, h3, h4, h5, h6': {
               fontFamily: getFontFamily(siteConfig.fonts.families.heading),
-              fontWeight: '600',
+              fontWeight: '500',
               scrollMarginTop: '2rem',
             },
             a: {
               color: siteConfig.theme === 'oxygen' ? '#0ea5e9' : '#708794',
               textDecoration: 'none',
+              textDecorationLine: 'none',
               fontWeight: '500',
               '&:hover': {
                 color: siteConfig.theme === 'oxygen' ? '#0284c7' : '#5a6d77',
                 textDecoration: 'underline',
+                textDecorationLine: 'underline',
               }
             },
             code: {
@@ -118,7 +123,7 @@ export default {
         },
         dark: {
           css: {
-            color: '#e2e8f0',
+            color: '#E8E3D8',
             code: {
               backgroundColor: 'rgb(30 41 59 / 0.8)',
             },
@@ -152,7 +157,7 @@ export default {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       addUtilities({
         '.scrollbar-hide': {
           '-ms-overflow-style': 'none',
@@ -161,16 +166,6 @@ export default {
             display: 'none'
           }
         },
-        '.text-selection-highlight': {
-          '::selection': {
-            backgroundColor: siteConfig.theme === 'oxygen' ? '#0ea5e9' : '#708794',
-            color: '#ffffff'
-          },
-          '::-moz-selection': {
-            backgroundColor: siteConfig.theme === 'oxygen' ? '#0ea5e9' : '#708794',
-            color: '#ffffff'
-          }
-        }
       })
     }
   ],

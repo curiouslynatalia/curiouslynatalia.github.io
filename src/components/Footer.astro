@@ -32,24 +32,26 @@ const getProfilePictureClasses = (size: string, style: string) => {
 };
 ---
 
-<footer class="bg-white dark:bg-primary-950 mt-auto">
+<footer class="bg-primary-50 dark:bg-primary-950 mt-auto">
   <div class="mx-auto px-4 sm:px-6 lg:px-8 py-8" style={`max-width: ${siteConfig.layout.contentWidth}`}>
 
     <!-- Substack CTA -->
-    <div class="mb-8 pb-8 border-b border-primary-200 dark:border-primary-700 flex items-center justify-between gap-16">
-      <div class="max-w-xs">
-        <p class="text-sm font-medium text-primary-900 dark:text-primary-50 mb-1">Want more?</p>
-        <p class="text-sm text-primary-500 dark:text-primary-400">Get essays on attention, self-knowledge, and intentional living — straight to your inbox.</p>
-      </div>
-      
-        <a href="https://betterthanreels.substack.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center whitespace-nowrap px-3 py-2 bg-highlight-600 hover:bg-highlight-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
-      >
-        Subscribe →
-      </a>
+<div class="mb-8 pb-8 border-b border-primary-200 dark:border-primary-700">
+  <div class="bg-primary-100 dark:bg-primary-800 rounded-xl p-6 flex items-center justify-between gap-16">
+    <div class="max-w-xs">
+      <p class="text-sm font-medium text-primary-900 dark:text-primary-200 mb-1">Want more?</p>
+      <p class="text-sm text-primary-500 dark:text-primary-400">Get essays on attention, self-knowledge, and intentional living — straight to your inbox.</p>
     </div>
+    
+    <a href="https://betterthanreels.substack.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-primary"
+    >
+      Subscribe →
+    </a>
+  </div>
+</div>
     <!-- Profile picture above footer content when footer is enabled -->
     {showProfilePicture && footerEnabled && (
       <div class="mb-4 flex justify-start">

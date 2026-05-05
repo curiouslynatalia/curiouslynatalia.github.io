@@ -705,17 +705,17 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
           }
         },
         mml: {
-          primary: {
-            50: '#FDFDFC', 100: '#F7F4EE', 200: '#E8E3D8', 300: '#D4CCBA',
-            400: '#B0A88E', 500: '#807A65', 600: '#5E5947', 700: '#444136',
-            800: '#2E2C24', 900: '#1E1C16', 950: '#111009'
-          },
-          highlight: {
-            50: '#F4F7EE', 100: '#E6EDD6', 200: '#CCDAAD', 300: '#B3C884',
-            400: '#98AA6E', 500: '#7D8F5A', 600: '#637448', 700: '#4A5836',
-            800: '#323D25', 900: '#1E2416', 950: '#111309'
-          }
-        }
+  primary: {
+    50: '#FDFDFC', 100: '#F7F4EE', 200: '#E8E3D8', 300: '#D4CCBA',
+    400: '#B0A88E', 500: '#807A65', 600: '#5E5947', 700: '#444136',
+    800: '#282726', 900: '#1C1B1A', 950: '#100F0F'
+  },
+  highlight: {
+    50: '#F4F7EE', 100: '#E6EDD6', 200: '#CCDAAD', 300: '#B3C884',
+    400: '#98AA6E', 500: '#7D8F5A', 600: '#637448', 700: '#4A5836',
+    800: '#323D25', 900: '#1E2416', 950: '#111309'
+  }
+}
       };
 
       // Handle custom themes (both "custom" and custom theme filenames)
@@ -1040,7 +1040,7 @@ const scrollbarClass = siteConfig.hideScrollBar ? '' : 'show-scrollbars';
 
 </head>
 
-<body class={`min-h-screen bg-white dark:bg-primary-950 text-primary-900 dark:text-primary-50 text-selection-highlight transition-colors duration-200 ${scrollbarClass} ${bodyClass}`}>
+<body class={`min-h-screen bg-primary-50 dark:bg-primary-950 text-primary-900 dark:text-primary-200 transition-colors duration-200 ${scrollbarClass} ${bodyClass}`}>
   <!-- Skip to main content -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 btn-primary px-4 py-2 rounded-md z-50">
     Skip to main content

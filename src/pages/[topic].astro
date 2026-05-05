@@ -42,7 +42,7 @@ description: topic.description,
         <div class="overflow-hidden rounded-2xl mb-8" style="height: 200px;">
           <img src={topic.image} alt={topic.title} class="w-full h-full object-cover" />
         </div>
-        <h1 class="text-4xl font-normal text-primary-900 dark:text-primary-50 mb-3"
+        <h1 class="text-4xl font-normal text-primary-900 dark:text-primary-200 mb-3"
           style="font-family: 'Averia Libre', serif;">{topic.title}</h1>
         <p class="text-primary-600 dark:text-primary-300 max-w-xl">{topic.description}</p>
       </section>
@@ -57,9 +57,9 @@ description: topic.description,
           <li class="border-b border-primary-200 dark:border-primary-700">
             <a href={`/posts/${post.id}`} class="flex items-center justify-between py-4 group">
               <span
-                class="text-primary-900 dark:text-primary-50 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors">{post.data.title}</span>
+                class="text-primary-900 dark:text-primary-200 group-hover:text-highlight-600 dark:group-hover:text-highlight-400 transition-colors">{post.data.title}</span>
               <span
-                class="text-xs text-primary-400 dark:text-primary-500 uppercase tracking-widest ml-8 flex-shrink-0">{getPostType(post)}</span>
+                class="text-xs text-primary-400 dark:text-primary-2000 uppercase tracking-widest ml-8 flex-shrink-0">{getPostType(post)}</span>
             </a>
           </li>
           ))}
